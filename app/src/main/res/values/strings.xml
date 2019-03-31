@@ -1,6 +1,10 @@
 <resources>
-<string name="app_name">temperature conversion</string>
-<string name="out">the result</string>
-<string name="btn1">convert to Fahrenheit</string>
-<string name="inp">Please input degree Celsius</string>
+    <string name="app_name">Score</string>
+    <string name="out">the result</string>
+    <string name="btn1">convert to Fahrenheit</string>
+    <string name="inp">Please input degree Celsius</string>
+    <string name="btn_reset">reset</string>
+    <string name="btn_1">+1 point</string>
+    <string name="btn_2">+2 points</string>
+    <string name="btn_3">+3 points</string>
 </resources>
