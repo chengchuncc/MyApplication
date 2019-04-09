@@ -22,8 +22,17 @@ public class Rate2Activity extends AppCompatActivity {
         edite = (EditText) findViewById(R.id.edit_euro);
         editw = (EditText) findViewById(R.id.edit_won);
 
+        final Intent intent = getIntent();
+        d = intent.getFloatExtra("dollar",0.0f);
+        e = intent.getFloatExtra("euro",0.0f);
+        w = intent.getFloatExtra("won",0.0f);
+
+        editd.setText(""+d);
+        edite.setText(""+e);
+        editw.setText(""+w);
     }
     public void changeRate(View btn){
+        //获取新的值
         String ed = editd.getText().toString();
         String ee = edite.getText().toString();
         String ew = editw.getText().toString();
@@ -31,12 +40,22 @@ public class Rate2Activity extends AppCompatActivity {
         d = Float.parseFloat(ed);
         e = Float.parseFloat(ee);
         w = Float.parseFloat(ew);
-        //打开一个页面Activity
-        Log.i("open","openOne:");
-        Intent intent = new Intent(this,RateActivity.class);
-        intent.putExtra("dollar",d);
-        intent.putExtra("euro",e);
-        intent.putExtra("won",w);
-        startActivity(intent);
+
+        Log.i("changeRate:","获取到新的值");
+        Log.i("onCreate:","newDollar="+d);
+        Log.i("onCreate:","newEuro="+e);
+        Log.i("onCreate:","newWon="+w);
+
+        //保存到bundle或放到extra中
+        Log.i("open","changeRate:");
+        Intent intent2 = getIntent();
+        Bundle bdl = new Bundle();
+        bdl.putFloat("dollar2",d);
+        bdl.putFloat("euro2",e);
+        bdl.putFloat("won2",w);
+        intent2.putExtras(bdl);
+        setResult(2,intent2);
+        //返回到调用页面
+        finish();
     }
 }

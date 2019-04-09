@@ -13,4 +13,5 @@
     <string name="rmb_hint">Input RMB</string>
     <string name="edit_hint">input the rmb that one unit can change</string>
     <string name="btn_changeR">Change Rate</string>
+    <string name="menu_set_label">Setting</string>
 </resources>

@@ -2,8 +2,11 @@ package swufe.cc.www.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,7 +16,7 @@ public class RateActivity extends AppCompatActivity {
 
     EditText rmb;
     TextView show;
-    float d,e,w;
+    float d = 6.7f,e = 11f,w = 0.002f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,20 +31,7 @@ public class RateActivity extends AppCompatActivity {
 
     public void onClick(View btn){
 
-        final Intent intent = getIntent();
-        d = intent.getFloatExtra("dollar",6.7f);
-        e = intent.getFloatExtra("euro",11f);
-        w = intent.getFloatExtra("won",0.002f);
 
-/*
-//使用Bundle接收数据
-        Bundle bundle = getIntent().getExtras();
-        d = bundle.getFloat("dollar");
-        e = bundle.getFloat("euro");
-        w = bundle.getFloat("won");
-*/
-
-        //获取用户输入内容
         String str = rmb.getText().toString();
         float r = 0;
         if (str.length() > 0) {
@@ -60,14 +50,57 @@ public class RateActivity extends AppCompatActivity {
             val = r * (1/w);
         }
         show.setText(String.format("%.2f", val));
+
+
     }
 
     public void openOne(View btn){
-        //打开一个页面Activity
-        Log.i("open","openOne:");
-        Intent hello = new Intent(this,Rate2Activity.class);
-/*        Intent web  = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.jd.com"));
-        Intent call  = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:10086"));*/
-        startActivity(hello);
+        OpenConfig();
+
+    }
+
+    private void OpenConfig() {
+        Intent intent = new Intent(this, Rate2Activity.class);
+        intent.putExtra("dollar", d);
+        intent.putExtra("euro", e);
+        intent.putExtra("won", w);
+
+        Log.i("openOne:","dollarRate="+d);
+        Log.i("openOne:","euroRate="+e);
+        Log.i("openOne:","wonRate="+w);
+
+        startActivityForResult(intent, 1);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.rate,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.menu_set){
+            OpenConfig();
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode==1 && resultCode==2){
+            Bundle bundle = data.getExtras();
+            d = bundle.getFloat("dollar2",0.1f);
+            e = bundle.getFloat("euro2",0.1f);
+            w = bundle.getFloat("won2",0.1f);
+
+            Log.i("onActivityResult","get newDollar2="+d);
+            Log.i("onActivityResult","get newEuro2="+e);
+            Log.i("onActivityResult","get newWon2="+w);
+
+        }
     }
 }
