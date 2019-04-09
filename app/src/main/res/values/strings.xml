@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Score</string>
+    <string name="app_name">Rate</string>
     <string name="out">the result</string>
     <string name="btn1">convert to Fahrenheit</string>
     <string name="inp">Please input degree Celsius</string>
@@ -11,4 +11,6 @@
     <string name="btn_euro_label">Euro</string>
     <string name="btn_won_label">Won</string>
     <string name="rmb_hint">Input RMB</string>
+    <string name="edit_hint">input the rmb that one unit can change</string>
+    <string name="btn_changeR">Change Rate</string>
 </resources>

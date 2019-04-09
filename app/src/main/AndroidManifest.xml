@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Rate2Activity">
+
+        </activity>
         <activity android:name=".RateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,9 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScoreActivity">
-
-        </activity>
+        <activity android:name=".ScoreActivity"></activity>
         <activity android:name=".HelloActivity" />
         <activity android:name=".MainActivity" />
     </application>

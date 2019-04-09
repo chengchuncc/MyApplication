@@ -47,4 +47,13 @@
         android:onClick="onClick"
         android:text="@string/btn_won_label" />
 
+    <Button
+        android:id="@+id/changeRate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:text="@string/btn_changeR"
+        android:onClick="openOne"/>
+
 </LinearLayout>
