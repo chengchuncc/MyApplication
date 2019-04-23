@@ -1,24 +1,46 @@
 package swufe.cc.www.myapplication;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class ScoreActivity extends AppCompatActivity {
 
     TextView score;
     TextView score2;
+    private final String TAG ="second";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
+        Log.i(TAG, "onCreate: ");
 
         score = (TextView) findViewById(R.id.score);
         score2 = (TextView) findViewById(R.id.score2);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String scorea = ((TextView) findViewById(R.id.score)).getText().toString();
+        String scoreb = ((TextView) findViewById(R.id.score2)).getText().toString();
+
+        outState.putString("teama_score",scorea);
+        outState.putString("teamb_score",scoreb);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String scorea = savedInstanceState.getString("teama_score");
+        String scoreb = savedInstanceState.getString("teamb_score");
+
+        Log.i(TAG, "onRestoreInstanceState: ");
+        ((TextView) findViewById(R.id.score)).setText(scorea);
+        ((TextView) findViewById(R.id.score2)).setText(scoreb);
     }
 
     public void btnAdd1(View btn) {
