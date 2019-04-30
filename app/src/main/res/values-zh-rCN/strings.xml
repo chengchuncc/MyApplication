@@ -14,4 +14,6 @@
     <string name="btn_won_label">韩元</string>
     <string name="edit_hint">请输入一个单位该货币可兑换人民币数</string>
     <string name="btn_changeR">改变汇率</string>
+    <string name="menu_set_label">改变汇率</string>
+    <string name="label_open_list">查看外汇表</string>
 </resources>
