@@ -12,7 +12,7 @@
         android:id="@+id/title2"
         android:textSize="35sp"
         android:gravity="center"
-        android:text="@string/btn_changeR"
+        android:text="@string/app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
