@@ -16,7 +16,9 @@
         <activity android:name=".MyListActivity" >
 
         </activity>
-        <activity android:name=".RateListActivity" />
+        <activity android:name=".RateListActivity" >
+
+        </activity>
         <activity android:name=".Rate2Activity" />
         <activity android:name=".RateActivity">
             <intent-filter>
