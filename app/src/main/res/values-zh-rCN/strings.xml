@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">汇率换算</string>
+    <string name="app_name">Hello</string>
     <string name="out">结果</string>
     <string name="btn1">转换为华氏度</string>
     <string name="inp">请输入摄氏度</string>
@@ -16,4 +16,7 @@
     <string name="btn_changeR">改变汇率</string>
     <string name="menu_set_label">改变汇率</string>
     <string name="label_open_list">查看外汇表</string>
+    <string name="rdo_home_label">首页</string>
+    <string name="rdo_func_label">功能</string>
+    <string name="rdo_setting_label">设置</string>
 </resources>

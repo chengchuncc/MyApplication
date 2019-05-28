@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Rate</string>
+    <string name="app_name">Hello</string>
     <string name="out">the result</string>
     <string name="btn1">convert to Fahrenheit</string>
     <string name="inp">Please input degree Celsius</string>
@@ -15,4 +15,7 @@
     <string name="btn_changeR">Change Rate</string>
     <string name="menu_set_label">Setting</string>
     <string name="label_open_list">OpenList</string>
+    <string name="rdo_home_label">Home</string>
+    <string name="rdo_func_label">Func</string>
+    <string name="rdo_setting_label">Setting</string>
 </resources>
